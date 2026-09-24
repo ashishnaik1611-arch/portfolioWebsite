@@ -47,7 +47,7 @@ export default function Projects() {
   return (
     <section id="projects" className="w-full max-w-5xl px-6 py-20">
       <Reveal>
-        <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
+        <h2 className="mb-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Projects
         </h2>
         <p className="mb-12 max-w-xl text-lg text-muted">

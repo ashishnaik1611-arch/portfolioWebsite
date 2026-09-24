@@ -279,15 +279,12 @@ export default function Languages() {
   return (
     <section id="languages" className="w-full max-w-5xl px-6 py-20">
       <Reveal>
-        <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
-          Languages &amp; Tools
+        <h2 className="mb-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          Languages &amp; tools
         </h2>
-        <p className="mb-2 max-w-xl text-lg text-muted">
-          Always building, always growing.
-        </p>
-        <p className="mb-12 max-w-xl text-sm text-muted">
-          Move your cursor through the box to gather the tools into a line —
-          click to scatter them again.
+        <p className="mb-12 max-w-xl text-lg text-muted">
+          Move your cursor through the box to gather them into a line — click
+          to scatter again.
         </p>
       </Reveal>
 

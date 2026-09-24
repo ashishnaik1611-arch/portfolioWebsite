@@ -10,8 +10,6 @@ const links = [
   { label: "Work.", href: "#projects" },
   { label: "Experience.", href: "#experience" },
   { label: "Contact.", href: "#contact" },
-  // { label: "Github.", href: "https://github.com/ashishnaik1611-arch" },
-  // { label: "LinkedIn.", href: "https://linkedin.com/in/ashishnaik-ds" },
 ];
 
 function handleClick(href: string) {

@@ -4,7 +4,6 @@ import Reveal from "./Reveal";
 
 const disciplines = [
   {
-    tag: "01 / VOICE AI",
     title: "Real-Time Voice Pipelines",
     description:
       "Production multilingual voice agents with LiveKit, WebRTC, and TURN — voice activity detection, noise cancellation, and custom tool-calling.",
@@ -14,7 +13,6 @@ const disciplines = [
     ],
   },
   {
-    tag: "02 / RAG & LLMs",
     title: "LLM Orchestration & Retrieval",
     description:
       "Retrieval-augmented generation pipelines on Milvus and Pinecone, built with LangChain, LangGraph, and LlamaIndex across OpenAI, Gemini, and Sarvam AI.",
@@ -24,7 +22,6 @@ const disciplines = [
     ],
   },
   {
-    tag: "03 / BACKEND",
     title: "APIs & Backend Systems",
     description:
       "REST APIs and backend services in Python FastAPI, TypeScript, and Node.js, containerized with Docker across microservice and monolithic architectures.",
@@ -34,7 +31,6 @@ const disciplines = [
     ],
   },
   {
-    tag: "04 / FRONTEND",
     title: "Web & Mobile Interfaces",
     description:
       "Client-facing products and SDKs in React, Next.js, and React Native — from zero-code embeddable widgets to full conversational apps.",
@@ -49,7 +45,7 @@ export default function Expertise() {
   return (
     <section id="expertise" className="w-full max-w-5xl px-6 py-20">
       <Reveal>
-        <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
+        <h2 className="mb-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Expertise
         </h2>
         <p className="mb-12 max-w-xl text-lg text-muted">
@@ -62,11 +58,6 @@ export default function Expertise() {
         {disciplines.map((item, i) => (
           <Reveal key={item.title} delay={i * 0.08}>
             <div className="group h-full rounded-2xl border border-border bg-surface-low/80 p-6 backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-accent">
-              <div className="mb-4 flex items-start justify-between">
-                <span className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
-                  {item.tag}
-                </span>
-              </div>
               <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-accent">
                 {item.title}
               </h3>

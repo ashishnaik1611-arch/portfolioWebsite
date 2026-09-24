@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Reveal from "./Reveal";
 
 const skills = [
@@ -10,11 +11,20 @@ const skills = [
 ];
 
 export default function SkillsAndContact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio contact from ${form.name || "a visitor"}`);
+    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+    window.location.href = `mailto:ashish.naik.1611@gmail.com?subject=${subject}&body=${body}`;
+  }
+
   return (
     <>
       <section id="skills" className="w-full max-w-3xl px-6 py-20">
         <Reveal>
-          <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
+          <h2 className="mb-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Skills
           </h2>
           <p className="mb-8 max-w-xl text-lg text-muted">
@@ -35,7 +45,7 @@ export default function SkillsAndContact() {
 
       <footer id="contact" className="w-full max-w-5xl px-6 py-20">
         <Reveal>
-          <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
+          <h2 className="mb-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Contact
           </h2>
           <p className="mb-12 max-w-xl text-lg text-muted">
@@ -114,7 +124,7 @@ export default function SkillsAndContact() {
           <Reveal className="lg:col-span-7" delay={0.1}>
             <form
               className="flex flex-col gap-4 rounded-3xl border border-border bg-surface-low/90 p-8 backdrop-blur-2xl"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
@@ -125,6 +135,8 @@ export default function SkillsAndContact() {
                     type="text"
                     required
                     placeholder="Jane Doe"
+                    value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted focus:ring-1 focus:ring-accent"
                   />
                 </div>
@@ -136,6 +148,8 @@ export default function SkillsAndContact() {
                     type="email"
                     required
                     placeholder="jane@company.com"
+                    value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                     className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted focus:ring-1 focus:ring-accent"
                   />
                 </div>
@@ -148,6 +162,8 @@ export default function SkillsAndContact() {
                   required
                   rows={4}
                   placeholder="Tell me about your project..."
+                  value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                   className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted focus:ring-1 focus:ring-accent"
                 />
               </div>
@@ -155,11 +171,14 @@ export default function SkillsAndContact() {
                 type="submit"
                 className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-secondary py-3 text-sm font-bold text-background shadow-lg shadow-accent/20 transition-transform hover:scale-[1.01]"
               >
-                Send message
+                Open in email
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                 </svg>
               </button>
+              <p className="text-center text-xs text-muted">
+                Opens your email app with this pre-filled — nothing sends from here directly.
+              </p>
             </form>
           </Reveal>
         </div>

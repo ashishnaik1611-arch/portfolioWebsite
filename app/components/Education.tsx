@@ -19,7 +19,7 @@ export default function Education() {
   return (
     <section id="education" className="w-full max-w-3xl px-6 py-20">
       <Reveal>
-        <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">
+        <h2 className="mb-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Education
         </h2>
         <p className="mb-12 max-w-xl text-lg text-muted">

@@ -30,11 +30,7 @@ export default function Hero() {
           </span>
         </span>
         <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-6xl">
-          Building production{" "}
-          <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-            voice AI
-          </span>{" "}
-          that people actually talk to
+          Building production voice AI that people actually talk to
         </h1>
         <p className="mx-auto mt-4 max-w-lg text-lg text-muted">
           I&apos;m Ashish, a software engineer at Rakuten India building
